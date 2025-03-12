@@ -26,11 +26,12 @@ public class Run {
     public static void main(String[] args) {
         ActionSimple bnp, axa;
         ActionComposee bqAss;
-        Jour j1, j2;
+        Jour j1, j2, j3;
 
         // init des objets metiers Jour
         j1 = new Jour(2014, 1);
         j2 = new Jour(2014, 2);
+        j3 = new Jour(2014, 2);
 
         // creation d'actions simples et composée
         bnp = new ActionSimple("BNP");
@@ -39,7 +40,7 @@ public class Run {
         // enrg de la composition de l'action composée
         bqAss.enrgComposition(axa, 0.3f);
         bqAss.enrgComposition(bnp, 0.7f);
-        // enrg. de 2 cours pour chaque action 
+        // enrg. de 2 cours pour chaque action
         axa.enrgCours(j1, 200);
         axa.enrgCours(j2, 250);
         bnp.enrgCours(j1, 100);
@@ -67,7 +68,7 @@ public class Run {
         System.out.println("Portefeuille : " + p);
         p.vendre(bnp, 50);
         System.out.println("Portefeuille : " + p);
- 
+
     }
 
 }
