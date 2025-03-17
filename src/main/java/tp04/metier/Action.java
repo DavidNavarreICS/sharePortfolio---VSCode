@@ -41,7 +41,12 @@ public abstract class Action {
      * @param libelle
      */
     public Action(String libelle) {
-        this.libelle = libelle;
+        if (Objects.nonNull(libelle) && libelle.length() >= 3) {
+            this.libelle = libelle;
+        } else {
+            throw new IllegalArgumentException("libelle cannot be null or less than three characters");
+        }
+
     }
 
     public abstract float valeur(Jour j);
