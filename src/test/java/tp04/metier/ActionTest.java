@@ -15,6 +15,8 @@
  */
 package tp04.metier;
 
+import java.lang.reflect.Executable;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -25,15 +27,29 @@ import org.junit.jupiter.api.Test;
 class ActionTest {
 
     @Test
-    void testGetLibelle() {
-        final Action action = new ActionImpl();
-        Assertions.assertNotNull(action.getLibelle());
+    void testBuildActionWithCorrectLabel_ShouldPass() {
+        Assertions.assertDoesNotThrow(new org.junit.jupiter.api.function.Executable() {
+            @Override
+            public void execute() throws Throwable {
+                new ActionImpl("CC!");
+            }
+        });
     }
 
-    public class ActionImpl extends Action {
+    @Test
+    void testBuildActionWithIncorrectLabel_ShouldNotPass() {
+        Assertions.assertThrows(IllegalArgumentException.class, new org.junit.jupiter.api.function.Executable() {
+            @Override
+            public void execute() throws Throwable {
+                new ActionImpl("");
+            }
+        });
+    }
 
-        public ActionImpl() {
-            super("");
+    private static class ActionImpl extends Action {
+
+        public ActionImpl(final String libelle) {
+            super(libelle);
         }
 
         public float valeur(Jour j) {
