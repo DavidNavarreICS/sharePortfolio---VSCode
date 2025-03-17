@@ -34,6 +34,7 @@ public abstract class Action {
      */
     public String getLibelle() {
         return libelle;
+
     }
 
     /**
