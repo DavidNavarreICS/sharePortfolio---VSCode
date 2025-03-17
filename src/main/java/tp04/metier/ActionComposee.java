@@ -23,7 +23,6 @@ import java.util.Map;
  * @author perussel
  */
 public class ActionComposee extends Action {
-    // attribut lien
     Map<ActionSimple, Float> mapPanier;
 
     public ActionComposee(String libelle) {

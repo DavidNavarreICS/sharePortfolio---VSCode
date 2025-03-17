@@ -26,6 +26,7 @@ public abstract class Action {
      * 
      */
     private String libelle;
+    public static final int MINIUMU_LENGTH_LABEL = 3;
 
     /**
      * Get the value of libelle.
@@ -42,7 +43,7 @@ public abstract class Action {
      * @param libelle
      */
     public Action(String libelle) {
-        if (Objects.nonNull(libelle) && libelle.length() >= 3) {
+        if (Objects.nonNull(libelle) && libelle.length() >= MINIUMU_LENGTH_LABEL) {
             this.libelle = libelle;
         } else {
             throw new IllegalArgumentException("libelle cannot be null or less than three characters");
