@@ -43,6 +43,9 @@ public class Jour {
     }
 
     public Jour(int annee, int noJour) {
+        if (noJour <= 0) {
+            throw new IllegalArgumentException("noJour must be strictly positive");
+        }
         this.annee = annee;
         this.noJour = noJour;
     }

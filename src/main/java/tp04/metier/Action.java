@@ -22,11 +22,13 @@ import java.util.Objects;
  * @author perussel
  */
 public abstract class Action {
-
+    /**
+     * 
+     */
     private String libelle;
 
     /**
-     * Get the value of libelle
+     * Get the value of libelle.
      *
      * @return the value of libelle
      */
@@ -34,6 +36,10 @@ public abstract class Action {
         return libelle;
     }
 
+    /**
+     * 
+     * @param libelle
+     */
     public Action(String libelle) {
         this.libelle = libelle;
     }
@@ -56,10 +62,7 @@ public abstract class Action {
             return false;
         }
         final Action other = (Action) obj;
-        if (!Objects.equals(this.libelle, other.libelle)) {
-            return false;
-        }
-        return true;
+        return (Objects.equals(this.libelle, other.libelle));
     }
 
     public String toString() {
