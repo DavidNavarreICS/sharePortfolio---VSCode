@@ -21,13 +21,10 @@ import org.junit.jupiter.api.Test;
  *
  * @author David Navarre &lt;David.Navarre at irit.fr&gt;
  */
-public class ActionComposeeTest {
-
-    public ActionComposeeTest() {
-    }
+class ActionComposeeTest {
 
     @Test
-    public void testSomeMethod() {
+    void testSomeMethod() {
     }
 
 }
